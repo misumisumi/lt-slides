@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Sumi-Sumi">
-  <title>LTのタイトルなんて決まらねーよ</title>
+  <title>未定は”未定”</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -31,33 +31,66 @@
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/dracula.css" id="theme">
+  <link rel="stylesheet" href="custom.css"/>
 </head>
 <body>
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide">
-  <h1 class="title">LTのタイトルなんて決まらねーよ</h1>
+  <h1 class="title">未定は”未定”</h1>
   <p class="author">Sumi-Sumi</p>
 </section>
 
-<section class="slide level2">
-
-<style type="text/css">
-  .reveal h1,
-  .reveal h2 {font-size: 1.9em;},
-  .reveal h3,
-  .reveal h4,
-  .reveal h5,
-  .reveal h6 {
-    text-transform: none;
-  }
-</style>
+<section id="テーマ" class="slide level2">
+<h2>テーマ</h2>
+<h3 id="窓を叩き割るところから始めたlinux">1.
+窓を叩き割るところから始めたLinux</h3>
+<h3 id="院進で転学転学科したはなし">2. 院進で転学・転学科したはなし</h3>
+<p>自己紹介の後、どっちがいいか聞きます</p>
+</section>
+<section id="自己紹介" class="slide level2">
+<h2>自己紹介</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<table>
+<tbody>
+<tr class="odd">
+<td>名前</td>
+<td><code>Sumi-Sumi</code> <br> (X: <span class="citation"
+data-cites="SumiSumiVRC">@SumiSumiVRC</span>)</td>
+</tr>
+<tr class="even">
+<td>役割</td>
+<td>しがない(やつれた)大学院生</td>
+</tr>
+<tr class="odd">
+<td>専門</td>
+<td>声質変換・音声合成</td>
+</tr>
+<tr class="even">
+<td>最近</td>
+<td>NixOSでk8s建てたり<br>両性類声やったりDJしたり…</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:40%;">
+<p><img
+data-src="./figs/VRChat_2023-11-03_12-47-08.040_1080x1920.jpg" /></p>
+</div>
+</div>
+</section>
+<section id="テーマ-1" class="slide level2">
+<h2>テーマ</h2>
+<h3 id="窓を叩き割るところから始めたlinux-1">1.
+窓を叩き割るところから始めたLinux</h3>
+<h3 id="院進で転学転学科したはなし-1">2.
+院進で転学・転学科したはなし</h3>
 </section>
 <section>
-<section id="窓を叩き割って始めるlinux入門"
+<section id="窓を叩き割るところから始めたlinux-2"
 class="title-slide slide level1">
-<h1>窓を叩き割って始めるLinux入門</h1>
+<h1>窓を叩き割るところから始めたLinux</h1>
 
 </section>
 <section id="linuxどうやって-使えるようになった" class="slide level2">
@@ -68,9 +101,14 @@ class="title-slide slide level1">
 <li>「windowsよりLinuxの方が開発しやすいよ！」とどこかで見た</li>
 <li>「機械学習するならLinuxだよ！」とやっぱりどこかで見た</li>
 </ul>
-<h2 font-size="1.5em">
-軌跡を振り返ってみる
-</h2>
+</section>
+<section id="斜に構えていたが-解決に時間を惜しまなかった"
+class="slide level2">
+<h2>斜に構えていたが<br>解決に時間を惜しまなかった</h2>
+<ul>
+<li>環境に不満が無いというときが無かった (今も)</li>
+<li>「解決できそう！」だったら即やってみた</li>
+</ul>
 </section>
 <section id="原始開発環境はwindowsだった" class="slide level2">
 <h2>原始、開発環境はwindowsだった</h2>
@@ -82,7 +120,7 @@ class="title-slide slide level1">
 </ul></li>
 <li>そもそも機械学習するには非力なマシン
 <ul>
-<li>2C4Tのラップトップ</li>
+<li>2C4T, 8GBのラップトップ</li>
 </ul></li>
 </ul>
 <p><img data-src="./figs/g30ndd3dx0u81.jpg" width="720" /></p>
@@ -90,7 +128,7 @@ class="title-slide slide level1">
 <section id="ubuntuをデュアルブートしよう" class="slide level2">
 <h2>Ubuntuをデュアルブートしよう</h2>
 <ul>
-<li><code>apt</code>って素晴しい！
+<li><code>apt</code>って素晴らしい！
 <ul>
 <li>webを巡回しなくもソフトをインストールできるだと…!</li>
 </ul></li>
@@ -101,11 +139,6 @@ class="title-slide slide level1">
 </ul>
 <p><img data-src="./figs/2023-11-24_17-33.png" width="640" /></p>
 </section>
-<section id="test" class="slide level2">
-<h2>test</h2>
-<p><img data-src="./figs/Windows_Vs_Mac_Vs_Linux_6.jpg"
-width="560" /></p>
-</section>
 <section id="windows-updateしたらosが-破壊された" class="slide level2">
 <h2>windows updateしたらOSが<br>破壊された！</h2>
 <ul>
@@ -115,9 +148,416 @@ width="560" /></p>
 </section>
 <section id="いっそのこと窓を叩き割ろう" class="slide level2">
 <h2>いっそのこと窓を叩き割ろう!</h2>
-<p><img data-src="./figs/e1ag7kro18j31.jpg" width="640" /> <img
-data-src="./figs/Ubuntu-Budgie-22.04-LTS-Desktop-1200x678.jpg"
-width="640" /></p>
+<ul>
+<li>windowsを消し去ってUbuntuに完全に移行した</li>
+<li>Ubuntu Budgieを使い始めた
+<ul>
+<li>デスクトップに美しさを求め始める</li>
+</ul></li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 62%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img data-src="./figs/e1ag7kro18j31.jpg" width="640" /></td>
+<td><img data-src="./figs/Ubuntu-Budgie-22.04-LTS-Desktop-1200x678.jpg"
+width="640" /></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="案外困らないubuntu生活" class="slide level2">
+<h2>案外困らないUbuntu生活</h2>
+<ul>
+<li>ブラウザはfirefoxやChromeが使える</li>
+<li>Office系もGoogleやLibreOfficeで代用可能</li>
+<li>LaTexやmarkdownが素晴らしい (後年)</li>
+<li>ゲームだけ(当時は)厳しかった…</li>
+</ul>
+</section>
+<section id="ubuntu壊れる" class="slide level2">
+<h2>Ubuntu壊れる…</h2>
+<ul>
+<li><code>apt update &amp;&amp; apt upgrade</code>でなんか壊れる</li>
+<li>何がどう壊れたのか知識不足で分からない</li>
+<li>結局再インスコ…</li>
+</ul>
+</section>
+<section id="archlinuxとの出会い" class="slide level2">
+<h2>ArchLinuxとの出会い</h2>
+<p>サークルにて…</p>
+<ul>
+<li>友人: 「i3っていう<strong>タイリングWM</strong>っていいで。<br>
+<strong>vim</strong>もいいぜ！<br>
+<strong>ArchLinux</strong>ってエッチだぜ<br>
+<strong>unixporn</strong>はエチエチだぜ」</li>
+<li>ワイ: 「はぇー。ええやん」
+<ul>
+<li>→初めてのArch Linuxインストールバトル開始</li>
+</ul></li>
+</ul>
+</section>
+<section id="週間に及ぶ-arch-linuxインストールバトル"
+class="slide level2">
+<h2>2週間に及ぶ<br>Arch Linuxインストールバトル</h2>
+<ul>
+<li><code>gdisk</code>？ <code>systemd</code>？ <code>useradd</code>？
+ナニソレ？</li>
+<li>xmonadにするかー (Haskellを眺めつつ)
+<ul>
+<li>友人と同じi3を使うのは負けた気がする…</li>
+</ul></li>
+<li><code>dotfiles</code>の整備も併走</li>
+<li><strong>早急に</strong>インスコしないと外で使える端末がない！</li>
+</ul>
+<p><img data-src="./figs/ERmJJ2xUUAE7tJT.jpeg" width="560" /></p>
+</section>
+<section id="素晴らしきarch-linux" class="slide level2">
+<h2>素晴らしきArch Linux</h2>
+<ul>
+<li><code>pacman</code>(パッケージマネージャ)が優秀
+<ul>
+<li><code>apt</code>のような重さがない</li>
+<li>conflictがあれば更新しない</li>
+</ul></li>
+<li>公式repo + AURに必要なパッケージが大体揃ってる！</li>
+<li>壊れてもどこが問題か大体分かる</li>
+<li><strong>ArchWiki</strong>サイコー！</li>
+</ul>
+<p><img data-src="./figs/2023-11-25_14-07.png" width="720" /></p>
+</section>
+<section id="unixpornという沼" class="slide level2">
+<h2>unixpornという沼</h2>
+<ul>
+<li>GNOMEやKDEに負けないエチエチな環境を作りたい！</li>
+<li>キーボードから手を離さないという喜び
+<ul>
+<li>タイリングWMやVIM、CLIに自然とふれていく</li>
+</ul></li>
+</ul>
+<p><img data-src="./figs/2023-11-25_14-28.png" width="720" /></p>
+</section>
+<section id="arch-linuxもやっぱり壊れる" class="slide level2">
+<h2>Arch Linuxもやっぱり壊れる…</h2>
+<ul>
+<li>年に数度深刻な問題で起動ができなくなる…
+<ul>
+<li>更新はできるけれど…</li>
+</ul></li>
+<li>リカバリーディスク起動からのインスコバトル開幕！</li>
+</ul>
+</section>
+<section id="nixosとの出会い" class="slide level2">
+<h2>NixOSとの出会い</h2>
+<p>VRChatにて</p>
+<ul>
+<li>ワイ： 「Archっていいですよね~」</li>
+<li>フレ：
+「NixOSだと全部<strong>プログラムで設定</strong>記述できるよー<br>壊れても<strong>ロールバック</strong>できるよー」</li>
+<li>ワイ： 「はぇー。ええやん。」
+<ul>
+<li>→NixOSインスコバトル開幕！
+<ul>
+<li>やっぱりラップトップが血祭りに…</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="nixos">NixOS</h3>
+<ul>
+<li>関数言語<code>nix</code>で全ての設定を記述するDistro</li>
+<li>古い設定にロールバック可能</li>
+</ul>
+</section>
+<section id="nixはwrapperのwrapper" class="slide level2">
+<h2>nixはwrapperのwrapper</h2>
+<ul>
+<li>app → <code>systemd</code> or <code>XDG</code> or
+<code>boot script</code> … → <code>nix</code></li>
+<li>全てを<code>nix</code>で管理することの難しさ
+<ul>
+<li>FHSの非準拠など特有のクセ</li>
+</ul></li>
+<li><code>*.nix</code>がビルドできてもシステム設定が正しいかは別</li>
+<li>凝ったことをしようとするとパッケージビルド<br>などにも詳しくないと..</li>
+</ul>
+<p><img data-src="./figs/2023-11-25_14-24.png" width="640" /></p>
+</section>
+<section class="slide level2">
+
+<p>結局、Linux使えるようになるには…</p>
+</section>
+<section id="不満をあったら即解決しよう" class="slide level2">
+<h2>不満をあったら即解決しよう！</h2>
+<ul>
+<li>不満→勧められて→とりあえずインスコ・実装のサイクル</li>
+<li>Linuxは大体問題が分かるから解決できる→楽しい
+<ul>
+<li><code>journalctl</code>や各種Log</li>
+</ul></li>
+<li>解決できたら一つTuxと仲良しになれる！
+<ul>
+<li>自然と必要な知識が得られていく…はず…</li>
+</ul></li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 60%" />
+<col style="width: 40%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img data-src="./figs/Windows_Vs_Mac_Vs_Linux_6.jpg"
+width="480" /></td>
+<td><img data-src="./figs/Tux.svg.png" width="240" /></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="不満が無いなら" class="slide level2">
+<h2>不満が無いなら…</h2>
+<ul>
+<li>最低限、<code>cd</code>, <code>cp</code>, <code>ls</code>,
+<code>mkdir</code>, <code>mv</code>ができれば何とかなる</li>
+<li>あくまでOSも環境・ツールでしかない
+<ul>
+<li>環境をどれだけ良くしても進捗は…</li>
+</ul></li>
+<li>プログラムやアルゴリズムを学んだほうがいい…と思う</li>
+<li>どーしても入門したいなら<strong>Manjaro Linux</strong>
+(Arch系)がオススメ
+<ul>
+<li>WSL2はWSL2のクセがあるので…</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="院進で転学転学科したはなし-2"
+class="title-slide slide level1">
+<h1>院進で転学・転学科したはなし</h1>
+
+</section>
+<section id="伝えたいこと" class="slide level2">
+<h2>伝えたいこと</h2>
+<ol type="1">
+<li>大学院とその周りの立地は実際に現地に行って確かた方がいい</li>
+<li>転科する際の院試の勉強は3回生の終わりからした方がいい</li>
+</ol>
+</section>
+<section id="経歴" class="slide level2">
+<h2>経歴</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">いつ</th>
+<th style="text-align: center;">地方</th>
+<th style="text-align: center;">学科</th>
+<th style="text-align: center;">専門</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">学部</td>
+<td style="text-align: center;">関西</td>
+<td style="text-align: center;"><strong>応用化学科</strong></td>
+<td style="text-align: center;">触媒</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">修士</td>
+<td style="text-align: center;">東北</td>
+<td style="text-align: center;"><strong>情報系</strong></td>
+<td style="text-align: center;">声質変換・音声合成</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="そもそも" class="slide level2">
+<h2>そもそも…</h2>
+<ul>
+<li>高校時代から<code>汎用人工知能</code>に興味があった
+<ul>
+<li>対話 (人工無能)や音声合成を実装したくてプログラム始めた</li>
+</ul></li>
+<li>高校はいわゆる<code>自称進学校</code>で辛かった…
+(というより無気力症候群になった)</li>
+<li>センター試験と本試験がゴミゴミだった
+<ul>
+<li>プログラムとかPCにのめり込んでいた</li>
+</ul></li>
+<li>繰り下げでギリギリ合格した
+<ul>
+<li>「浪人には耐えられないなぁ」っと日和った</li>
+</ul></li>
+</ul>
+</section>
+<section id="回生での転科は" class="slide level2">
+<h2>2回生での転科は？</h2>
+<ul>
+<li>大学には2回生で転科できる制度がある</li>
+<li>学部・学科によって卒業に必須となる単位は<strong>全然違う</strong>
+<ul>
+<li>特に実験とか数学とか (化学では解析がいらなかった )</li>
+</ul></li>
+<li>転科すると、1年卒業が延びる
+<ul>
+<li>学費面で延びるのはちょっと…</li>
+</ul></li>
+<li>院試は大学入試よりは簡単…？</li>
+</ul>
+</section>
+<section id="院試は大学入試より-簡単という幻想" class="slide level2">
+<h2>院試は大学入試より<br>簡単という幻想</h2>
+<ul>
+<li>条件付きで簡単…というよりかは<code>下地</code>がある
+<ul>
+<li>同大学</li>
+<li>同学科</li>
+<li>ちゃんと授業に出ていた (単位を取れていた)</li>
+</ul></li>
+<li>転科する場合は<code>15時間/単位×必要科目分の知識</code>を自力で学習する必要
+<ul>
+<li>しかも内容は当然のように高度</li>
+</ul></li>
+<li>他大の場合は<code>圧倒的に情報不足</code>
+<ul>
+<li>教員の出題傾向や面接内容等</li>
+</ul></li>
+<li>同大学同学科への進学でも落ちるときは落ちる</li>
+</ul>
+</section>
+<section id="院試の勉強" class="slide level2">
+<h2>院試の勉強…</h2>
+<ul>
+<li>開始は4回生になってから
+<ul>
+<li>入試は大体7月</li>
+</ul></li>
+<li>過去問は取り寄せれば大学院から大体1-2年は貰えた
+<ul>
+<li>X (Twitter)を駆使して複数年貰った</li>
+</ul></li>
+<li>基礎知識は<strong>教科書やYoutube</strong>で得た
+<ul>
+<li>ちょうどコロナで大学教員がアップしている高品質の動画が多数あった</li>
+</ul></li>
+<li>分からないところはサークル内の別学科の友人に聞いた</li>
+</ul>
+<p><img data-src="./figs/2023-11-25_17-38.png" width="480" /></p>
+</section>
+<section id="志望先の選定" class="slide level2">
+<h2>志望先の選定</h2>
+<ul>
+<li>複数の志望先
+<ul>
+<li>リスクの軽減とどうしても情報系に進みたかった</li>
+</ul></li>
+<li>繋がりのあった教授と交流のある研究室をいくつか紹介してもらった
+<ul>
+<li>東北の中で2つ紹介してもらった (計3つ受けることに)
+<ul>
+<li>面接して受け入れていただけるかも確認した</li>
+</ul></li>
+</ul></li>
+<li>地域と人間関係の構築は特に懸念してなかった
+<ul>
+<li>住めば大体どこも同じだろう</li>
+<li>人間関係は最悪VRChatがあるだろう</li>
+</ul></li>
+</ul>
+</section>
+<section id="試験当日行ってビックリ-part-1-多分住めない"
+class="slide level2">
+<h2>試験当日行ってビックリ (Part 1)<br>多分住めない…</h2>
+<ul>
+<li>県庁所在地でこれか…不安が募る
+<ul>
+<li>関西の主要都市は全国的に見てデカいということを失念</li>
+</ul></li>
+<li>大学のあるところ
+<ul>
+<li>駅前に何もない</li>
+<li>歩いても何もない (スーパーどこ…)</li>
+</ul></li>
+<li>試験の出来も良くなかった</li>
+</ul>
+<p><img data-src="./figs/2023-11-25_18-33.png" width="560" /></p>
+</section>
+<section id="試験当日行ってビックリ-part-2-ドナドナ"
+class="slide level2">
+<h2>試験当日行ってビックリ (Part 2)<br>ドナドナ…</h2>
+<ul>
+<li>深夜、雨模様の駅前、シャッター街…
+<ul>
+<li>前日の試験の出来も引きづっていた</li>
+</ul></li>
+<li>神社で賽銭のために銭を投げたら外した
+<ul>
+<li>しかも2つ目の社で…</li>
+</ul></li>
+<li>試験の出来…
+<ul>
+<li>面接で受け入れ先の教員の前で「分かりません」を連呼した</li>
+</ul></li>
+</ul>
+<p><img data-src="./figs/2023-11-25_18-32.png" width="560" /></p>
+</section>
+<section id="そして3つめ" class="slide level2">
+<h2>そして3つめ</h2>
+<ul>
+<li>ここが本命だった</li>
+<li>初日でやらかす
+<ul>
+<li>エルミート行列ってなんぞや…</li>
+</ul></li>
+<li>失意のうちに帰郷…
+<ul>
+<li>二日目はそれなりに解けたと感じていたために…</li>
+</ul></li>
+</ul>
+<p><img data-src="./figs/2023-11-25_18-40.png" width="640" /></p>
+</section>
+<section id="合格発表日までの地獄の日々" class="slide level2">
+<h2>合格発表日までの地獄の日々</h2>
+<ul>
+<li><code>院浪</code> or <code>就活</code>の選択が目前に迫っていた</li>
+<li>後期日程で受けられるところには手辺り次第コンタクトを取った</li>
+<li>合格発表日までの2週間は本当に鬱だった
+<ul>
+<li>家族共々、まるで深海の中で生活しているかのような圧迫感</li>
+</ul></li>
+</ul>
+<p><img data-src="./figs/2023-11-25_18-45.png" width="640" /></p>
+</section>
+<section id="そして" class="slide level2">
+<h2>そして…</h2>
+<h1 class="r-fit-text">
+2つ目合格！！
+</h1>
+<p>後はダメだったけれど…</p>
+<p>深海生活からの脱却…</p>
+</section>
+<section id="振り返って" class="slide level2">
+<h2>振り返って</h2>
+<ul>
+<li>希望の学科に行けてよかったー！</li>
+<li>諸所にコンタクトを取って情報収集をしていたことは良かった
+<ul>
+<li>特に大学院の選定について</li>
+</ul></li>
+<li>もっと<code>院試の勉強は早くするべき</code>だった
+<ul>
+<li>3ヶ月前からやっていたが3回生の終わりごろから基礎知識は勉強すべきだった</li>
+<li>時間が少なく過去問を中心にしていたが、カリキュラムを網羅的にやる必要があった</li>
+</ul></li>
+<li>大学院とその付近の立地は一度<code>ちゃんと目で見に行くべき</code>だった
+<ul>
+<li>本命以外はgoogle mapで上空から見ただけだった</li>
+<li>新幹線の偉大さ</li>
+</ul></li>
+<li>家族に深海生活させて本当に申しわけない…</li>
+</ul>
 </section></section>
     </div>
   </div>
@@ -152,7 +592,7 @@ width="640" /></p>
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: true,
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -282,7 +722,7 @@ width="640" /></p>
         height: 900,
 
         // Factor of the display size that should remain empty around the content
-        margin: 1.0e-3,
+        margin: 5.0e-3,
 
         // reveal.js plugins
         plugins: [
