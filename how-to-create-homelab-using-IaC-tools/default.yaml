@@ -1,0 +1,5 @@
+output-file: main.html
+to: revealjs
+standalone: true
+highlight-style: breezedark
+css: custom.css
