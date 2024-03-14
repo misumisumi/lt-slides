@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Sumi-Sumi">
-  <title>IaCを駆使して最強の自鯖環境を構築しよう</title>
+  <title>IaCを駆使して 最強の HomeLab を構築しよう</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -38,34 +38,25 @@
     <div class="slides">
 
 <section id="title-slide">
-  <h1 class="title">IaCを駆使して最強の自鯖環境を構築しよう</h1>
+  <h1 class="title">IaCを駆使して<br>最強の HomeLab を構築しよう</h1>
   <p class="author">Sumi-Sumi</p>
 </section>
 
-<section>
-<section id="iacを駆使して最強の自鯖環境を構築しよう"
-class="title-slide slide level1">
-<h1>IaCを駆使して最強の自鯖環境を構築しよう</h1>
-
-</section>
 <section id="自己紹介" class="slide level2">
 <h2>自己紹介</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <table>
-<colgroup>
-<col style="width: 4%" />
-<col style="width: 95%" />
-</colgroup>
 <tbody>
 <tr class="odd">
 <td>名前</td>
-<td><code>Sumi-Sumi</code> <br> (<del>Twitter</del> X: <span
-class="citation" data-cites="SumiSumiVRC">@SumiSumiVRC</span>)</td>
+<td><strong>Sumi-Sumi</strong> <br> (<del>🐦</del> <span
+class="math inline">𝕏</span>: <span class="citation"
+data-cites="SumiSumiVRC">@SumiSumiVRC</span>)</td>
 </tr>
 <tr class="even">
 <td>役割</td>
-<td>しがない (やつれた) 大学院生/ときどきメイド</td>
+<td>しがない (やつれた？) 大学院生 / ときどきメイド</td>
 </tr>
 <tr class="odd">
 <td>専門</td>
@@ -73,25 +64,217 @@ class="citation" data-cites="SumiSumiVRC">@SumiSumiVRC</span>)</td>
 </tr>
 <tr class="even">
 <td>最近</td>
-<td>おうちk8s環境が完成しました！<br> 社会から社不認定されたよ！ <br>
-つらたんだね</td>
+<td>おうち k8s環境が完成しました！ <br> 就活ダメです！</td>
 </tr>
 </tbody>
 </table>
 </div><div class="column" style="width:40%;">
-<p><img data-src="./figs/VRChat_2023-11-03_12-47-08.040_1080x1920.jpg"
+<p><img
+data-src="./figs/VRChat_2024-02-05_00-40-26.027_1080x1920_trim.jpg"
 height="480" /></p>
 </div>
 </div>
 </section>
-<section id="最強-要求の定義をしよう" class="slide level2">
-<h2><del>最強…</del> 要求の定義をしよう …</h2>
+<section>
+<section id="iac-を駆使して-最強の-homelab-を構築しよう"
+class="title-slide slide level1">
+<h1>IaC を駆使して<br>最強の HomeLab を構築しよう</h1>
+
+</section>
+<section id="homelab-って" class="slide level2">
+<h2>HomeLab って？</h2>
+<ul>
+<li><del>逸般の誤家庭</del> <code>自鯖</code>界隈</li>
+<li><em>おうちk8s</em>とか<em>ラズパイクラスタ</em>とか色んな沼が…</li>
+<li><a
+href="https://www.reddit.com/r/homelab/?feedViewType=cardView">Reddit</a>
+で海外ニキのエチチな環境を鑑賞できるよ</li>
+</ul>
+<div class="r-stack">
+<p><img src="./figs/2024-03-14_14-23.png" width="450" height="300">
+<img src="./figs/2024-03-14_14-23_1.png" width="450" height="300"></p>
+</div>
+</section>
+<section class="slide level2">
+
+<h3
+id="q.-便利なサービスはいっぱいある-わざわざセルフホスティングするのはなぜ">Q.
+便利なサービスはいっぱいある…<br>わざわざセルフホスティングするのはなぜ？</h3>
+</section>
+<section class="slide level2">
+
+<p>Q.
+便利なサービスはいっぱいある…<br>わざわざセルフホスティングするのはなぜ？</p>
+<p style="font-size: 200%; color: magenta;">
+A. プロプライエタリなサービスに<br>情報置くの怖いよね！
+</p>
+<ul>
+<li>サービスの突然の改訂・終了、検閲などに常に晒されている</li>
+<li>Ex) <text class="blur">amazon drive, google photo, EverNote
+…</text></li>
+</ul>
+</section>
+<section id="モチベ" class="slide level2">
+<h2>モチベ</h2>
+<ul>
+<li>研究データ・データセットを一元的に管理したい</li>
+<li>データを手元で管理する</li>
+<li>できるだけ OSS を採用する
+<ul>
+<li>プロジェクトが死んでも移行タイミングは自分が決定できる</li>
+</ul></li>
+<li><strong>構築した方が経験になるし何より楽しい！</strong></li>
+</ul>
+</section></section>
+<section>
+<section id="最強って" class="title-slide slide level1">
+<h1>最強って…？</h1>
+
+</section>
+<section id="最強-要件定義をしよう" class="slide level2">
+<h2><del>最強…</del> 要件定義をしよう …</h2>
 <ol type="1">
 <li><em>継続的</em>なサービスの提供</li>
 <li><em>ディスク冗長性</em>の確保</li>
-<li><em>いつでもどのマシンでも稼動する</em>状態の維持・管理</li>
+<li><em>いつでもどのマシンでも稼動</em>する状態の維持・管理</li>
+<li>できるだけ低コストであること</li>
 </ol>
 <p>内外のネットワークの冗長性、構成パーツの堅牢性については<br>ここでは考慮しない</p>
+</section>
+<section id="要件を満すための技術選定" class="slide level2">
+<h2>要件を満すための技術選定</h2>
+</section>
+<section id="継続的なサービスの提供" class="slide level2">
+<h2>1. <em>継続的</em>なサービスの提供</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li><code>pacemaker + corosync</code>
+<ul>
+<li>2 台以上のマシンで構築可能</li>
+<li>古くからある</li>
+</ul></li>
+<li><code>kubernetes</code>
+<ul>
+<li>注目度がかなり高い</li>
+<li>おうち k8s ってなんかかっこいい！</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="stack">
+<p><img src="https://clusterlabs.org/assets/pacemaker-notext-36740eee11c7c4ccf3f653d855bbe5b28673ba7950234fa84b619c86a7d4d608.svg" height="130">
+<img src="https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.svg" height="150"></p>
+</div>
+</div>
+</div>
+<p style="font-size: 200%; color: magenta;">
+-&gt; kubernetes を選定
+</p>
+</section>
+<section id="ディスク冗長性の確保" class="slide level2">
+<h2>2. <em>ディスク冗長性</em>の確保</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<ul>
+<li><code>drbd + pacemaker + corosync</code>
+<ul>
+<li>2 台のマシン間でディスクをミラーリング</li>
+<li>小リソースでも冗長性を確保可能</li>
+</ul></li>
+<li><code>Ceph (Rook/Ceph)</code>
+<ul>
+<li>分散ストレージ</li>
+<li>構築・チューニングが難しい</li>
+<li>拡張性と信頼性に優れる</li>
+</ul></li>
+<li><code>NAS + Raid</code></li>
+</ul>
+</div><div class="column" height="90%" style="width:30%;">
+<div class="stack">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/DRBD_logo.svg" height="80">
+<img src="https://ceph.io/assets/bitmaps/Ceph_Logo_Stacked_RGB_Reversed_120411_fa.png" height="200"></p>
+</div>
+</div>
+</div>
+<p style="font-size: 150%; ">
+大容量ディスク -&gt; <text style="color: magenta">drbd</text>
+</p>
+<p style="font-size: 150%; ">
+k8s 用永続ボリューム -&gt; <text style="color: magenta">Rook/Ceph</text>
+</p>
+</section>
+<section id="いつでもどのマシンでも稼動する状態の維持管理"
+class="slide level2">
+<h2>3. <em>いつでもどのマシンでも稼動</em>する状態の維持・管理</h2>
+<ul>
+<li>k8s ノードは VM で必要数を確保</li>
+<li>-&gt; 仮想化基盤が必要</li>
+</ul>
+<p><img
+data-src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiMtKKlItQH9ynKFnOgfa8O6Oen8m9wCOOn_XbFskZP9FGo3o9mcvQKhiwTK35uQ8Y3AAUiUm7jqMewAJ7vK2By-PSsA56e8G7ok7K_-3B9xU6EU-L5qxK5OA8adk1zXBo3iByrSJcYK-Y/s800/computer_server.png"
+width="450" /></p>
+</section>
+<section id="仮想化基盤をどうするか" class="slide level2">
+<h2>仮想化基盤をどうするか</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<ul>
+<li><code>Proxmox VE</code>
+<ul>
+<li>web コンソールで手軽に使える</li>
+<li>よく使われていて情報が多い</li>
+</ul></li>
+<li><code>VMWare vSphere</code>
+<ul>
+<li>高くて買えない</li>
+</ul></li>
+<li><code>Linux Distribution</code>
+<ul>
+<li>使いなれた好みの環境で構築可能</li>
+<li>一からの構築になるため<del>愛</del> 覚悟が必要</li>
+</ul></li>
+</ul>
+</div><div class="column" height="90%" style="width:30%;">
+<div class="stack">
+<p><img src="https://www.proxmox.com/images/proxmox/logos/mediakit-proxmox-server-solutions-logos-dark.svg" height="120">
+<img src="https://assets.ubuntu.com/v1/594d0a0c-Canonical%20Ubuntu%20Dark.svg" height="100">
+<img src="https://archlinux.org/static/logos/archlinux-logo-light-scalable.1ae4cc2e2469.svg" height="120"></p>
+</div>
+</div>
+</div>
+<p>-&gt; <text style="font-size: 200%; color: Cyan;">NixOS</text>
+を採用</p>
+</section></section>
+<section>
+<section id="仮想化基盤に-nixos-を-採用するということ"
+class="title-slide slide level1">
+<h1>仮想化基盤に NixOS を<br>採用するということ</h1>
+
+</section>
+<section id="nixos" class="slide level2">
+<h2>NixOS</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<ul>
+<li>ディシュトリビューションの一種</li>
+<li>システム・ユーザー<strong>環境の全てを宣言的に設定可能</strong>
+<ul>
+<li>純粋関数型パッケージマネージャー <code>nix</code></li>
+</ul></li>
+<li>依存関係の強力な解決や環境のロールバックなどの魅力</li>
+<li>ZFS も比較的使いやすい！</li>
+</ul>
+</div><div class="column" style="width:35%;">
+<p><img
+data-src="https://raw.githubusercontent.com/NixOS/nixos-artwork/master/logo/nixos-white.svg" /></p>
+<p><text style="font-size: 80%"> 関数 <span
+class="math inline"><em>λ</em></span> でラテン語<br>「Nix =
+雪の結晶」を<br>表したロゴ</text></p>
+</div>
+</div>
+</section>
+<section id="依存関係の強力な解決flakes" class="slide level2">
+<h2>依存関係の強力な解決：Flakes</h2>
 </section></section>
     </div>
   </div>
@@ -256,7 +439,7 @@ height="480" /></p>
         height: 720,
 
         // Factor of the display size that should remain empty around the content
-        margin: 5.0e-3,
+        margin: 5.0e-2,
 
         // reveal.js plugins
         plugins: [

@@ -9,3 +9,6 @@
 .reveal h6 {
   text-transform: none;
 }
+.blur {
+  filter: blur(8px);
+}

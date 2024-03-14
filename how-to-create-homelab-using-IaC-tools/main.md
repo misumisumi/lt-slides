@@ -1,37 +1,182 @@
 ---
 theme: dracula
-title: IaCを駆使して最強の自鯖環境を構築しよう
+title: IaCを駆使して<br>最強の HomeLab を構築しよう
 author: Sumi-Sumi
 width: 1280
 height: 720
-margin: 0.005
+margin: 0.05
 slideNumber: true
 ---
-
-# IaCを駆使して最強の自鯖環境を構築しよう
 
 ## 自己紹介
 
 :::::::::::::: {.columns}
 ::: {.column width="60%" }
 
-|      |                                                                                |
-| ---- | ------------------------------------------------------------------------------ |
-| 名前 | `Sumi-Sumi` <br> (~~Twitter~~ X: @SumiSumiVRC)                                 |
-| 役割 | しがない (やつれた) 大学院生/ときどきメイド                                    |
-| 専門 | 音声合成 (特に声質変換)                                                        |
-| 最近 | おうちk8s環境が完成しました！<br> 社会から社不認定されたよ！ <br> つらたんだね |
+|      |                                                        |
+| ---- | ------------------------------------------------------ |
+| 名前 | **Sumi-Sumi** <br> (~~🐦~~ $\mathbb{X}$: @SumiSumiVRC) |
+| 役割 | しがない (やつれた？) 大学院生 / ときどきメイド        |
+| 専門 | 音声合成 (特に声質変換)                                |
+| 最近 | おうち k8s環境が完成しました！ <br> 就活ダメです！     |
 
 :::
 ::: {.column width="40%"}
-![](./figs/VRChat_2023-11-03_12-47-08.040_1080x1920.jpg){height=480px}
+![](./figs/VRChat_2024-02-05_00-40-26.027_1080x1920_trim.jpg){height=480px}
 :::
 ::::::::::::::
 
-## ~~最強...~~ 要求の定義をしよう ...
+# IaC を駆使して<br>最強の HomeLab を構築しよう
+
+## HomeLab って？
+
+- ~~逸般の誤家庭~~ `自鯖`界隈
+- *おうちk8s*とか*ラズパイクラスタ*とか色んな沼が...
+- [Reddit](https://www.reddit.com/r/homelab/?feedViewType=cardView) で海外ニキのエチチな環境を鑑賞できるよ
+
+<div class="r-stack">
+  <img src="./figs/2024-03-14_14-23.png" width="450" height="300">
+  <img src="./figs/2024-03-14_14-23_1.png" width="450" height="300">
+</div>
+
+---
+
+### Q. 便利なサービスはいっぱいある...<br>わざわざセルフホスティングするのはなぜ？
+
+---
+
+Q. 便利なサービスはいっぱいある...<br>わざわざセルフホスティングするのはなぜ？
+
+<p style="font-size: 200%; color: magenta;"> A. プロプライエタリなサービスに<br>情報置くの怖いよね！</p>
+
+- サービスの突然の改訂・終了、検閲などに常に晒されている
+- Ex) <text class="blur">amazon drive, google photo, EverNote ...</text>
+
+## モチベ
+
+- 研究データ・データセットを一元的に管理したい
+- データを手元で管理する
+- できるだけ OSS を採用する
+  - プロジェクトが死んでも移行タイミングは自分が決定できる
+- **構築した方が経験になるし何より楽しい！**
+
+# 最強って...？
+
+## ~~最強...~~ 要件定義をしよう ...
 
 1. *継続的*なサービスの提供
 2. *ディスク冗長性*の確保
-3. *いつでもどのマシンでも稼動する*状態の維持・管理
+3. *いつでもどのマシンでも稼動*する状態の維持・管理
+4. できるだけ低コストであること
 
 内外のネットワークの冗長性、構成パーツの堅牢性については<br>ここでは考慮しない
+
+## 要件を満すための技術選定
+
+## 1. *継続的*なサービスの提供
+
+:::::::::::::: {.columns}
+::: {.column width="60%"}
+
+- `pacemaker + corosync`
+  - 2 台以上のマシンで構築可能
+  - 古くからある
+- `kubernetes`
+  - 注目度がかなり高い
+  - おうち k8s ってなんかかっこいい！
+
+:::
+::: {.column width="40%"}
+
+<div class="stack">
+  <img src="https://clusterlabs.org/assets/pacemaker-notext-36740eee11c7c4ccf3f653d855bbe5b28673ba7950234fa84b619c86a7d4d608.svg" height="130">
+  <img src="https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.svg" height="150">
+</div>
+:::
+::::::::::::::
+
+<p style="font-size: 200%; color: magenta;">-> kubernetes を選定</p>
+
+## 2. *ディスク冗長性*の確保
+
+:::::::::::::: {.columns}
+::: {.column width="70%"}
+
+- `drbd + pacemaker + corosync`
+  - 2 台のマシン間でディスクをミラーリング
+  - 小リソースでも冗長性を確保可能
+- `Ceph (Rook/Ceph)`
+  - 分散ストレージ
+  - 構築・チューニングが難しい
+  - 拡張性と信頼性に優れる
+- `NAS + Raid`
+
+:::
+::: {.column height="90%" width="30%"}
+
+<div class="stack">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/DRBD_logo.svg" height="80">
+  <img src="https://ceph.io/assets/bitmaps/Ceph_Logo_Stacked_RGB_Reversed_120411_fa.png" height="200">
+</div>
+:::
+::::::::::::::
+<p style="font-size: 150%; ">大容量ディスク -> <text style="color: magenta">drbd</text></p>
+<p style="font-size: 150%; "> k8s 用永続ボリューム -> <text style="color: magenta">Rook/Ceph</text></p>
+
+## 3. *いつでもどのマシンでも稼動*する状態の維持・管理
+
+- k8s ノードは VM で必要数を確保
+- -> 仮想化基盤が必要
+
+![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiMtKKlItQH9ynKFnOgfa8O6Oen8m9wCOOn_XbFskZP9FGo3o9mcvQKhiwTK35uQ8Y3AAUiUm7jqMewAJ7vK2By-PSsA56e8G7ok7K_-3B9xU6EU-L5qxK5OA8adk1zXBo3iByrSJcYK-Y/s800/computer_server.png){width=450}
+
+## 仮想化基盤をどうするか
+
+:::::::::::::: {.columns}
+::: {.column width="70%"}
+
+- `Proxmox VE`
+  - web コンソールで手軽に使える
+  - よく使われていて情報が多い
+- `VMWare vSphere`
+  - 高くて買えない
+- `Linux Distribution`
+  - 使いなれた好みの環境で構築可能
+  - 一からの構築になるため~~愛~~ 覚悟が必要
+
+:::
+::: {.column height="90%" width="30%"}
+
+<div class="stack">
+  <img src="https://www.proxmox.com/images/proxmox/logos/mediakit-proxmox-server-solutions-logos-dark.svg" height="120">
+  <img src="https://assets.ubuntu.com/v1/594d0a0c-Canonical%20Ubuntu%20Dark.svg" height="100">
+  <img src="https://archlinux.org/static/logos/archlinux-logo-light-scalable.1ae4cc2e2469.svg" height="120">
+</div>
+:::
+::::::::::::::
+-> <text style="font-size: 200%; color: Cyan;">NixOS</text> を採用
+
+# 仮想化基盤に NixOS を<br>採用するということ
+
+## NixOS
+
+:::::::::::::: {.columns}
+::: {.column width="70%"}
+
+- ディシュトリビューションの一種
+- システム・ユーザー**環境の全てを宣言的に設定可能**
+  - 純粋関数型パッケージマネージャー `nix`
+- 依存関係の強力な解決や環境のロールバックなどの魅力
+- ZFS も比較的使いやすい！
+
+:::
+::: {.column width="35%"}
+
+![](https://raw.githubusercontent.com/NixOS/nixos-artwork/master/logo/nixos-white.svg)
+
+<text style="font-size: 80%"> 関数 $\lambda$ でラテン語<br>「Nix = 雪の結晶」を<br>表したロゴ</text>
+
+:::
+::::::::::::::
+
+## 依存関係の強力な解決：Flakes
