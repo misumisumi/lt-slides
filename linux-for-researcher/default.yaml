@@ -1,0 +1,12 @@
+input-file: main.md
+output-file: main.html
+filters:
+  - mermaid-filter
+to: revealjs
+standalone: true
+highlight-style: breezedark
+css:
+  - custom.css
+# to: beamer
+# pdf-engine: lualatex
+# include-in-header: header.tex

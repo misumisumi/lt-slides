@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "BIZ UDPGothic";
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BIZ UDPGothic";
+  font-weight: bold;
+}
+@font-face {
+  font-family: "BIZ UDPGothic";
+  font-style: italic, oblique;
+}
+.slides {
+  font-family: "BIZ UDPGothic";
+}
+.title {
+  font-family: "BIZ UDPGothic";
+}
+.subtitle {
+  font-family: "BIZ UDPGothic";
+}
+
+.reveal h1 {
+  font-size: 2.6em;
+  font-family: "BIZ UDPGothic";
+}
+,
+.reveal h2 {
+  font-family: "BIZ UDPGothic";
+}
+,
+.reveal h3 {
+  font-family: "BIZ UDPGothic";
+}
+,
+.reveal h4 {
+  font-family: "BIZ UDPGothic";
+}
+,
+.reveal h5 {
+  font-family: "BIZ UDPGothic";
+}
+,
+.reveal h6 {
+  text-transform: none;
+  font-family: "BIZ UDPGothic";
+}
+.reveval li {
+  margin: 1ex 0;
+}
