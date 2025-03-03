@@ -3,3 +3,5 @@ to: revealjs
 standalone: true
 highlight-style: breezedark
 css: custom.css
+filters:
+  - pandoc-plantuml

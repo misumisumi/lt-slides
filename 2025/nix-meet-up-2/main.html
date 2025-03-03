@@ -37,50 +37,120 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide">
+<section id="title-slide" data-background-size="contain">
   <h1 class="title">妥協しない！<br>宣言的マシン環境構築</h1>
   <p class="author">Sumi-Sumi</p>
 </section>
 
-<section id="自己紹介" class="slide level2">
-<h2>自己紹介</h2>
+<section>
+<section id="お前は誰だ" class="title-slide slide level1">
+<h1>お前は誰だ？</h1>
+
+</section>
+<section id="プロフィール" class="slide level2">
+<h2>プロフィール</h2>
 <div class="columns">
-<div class="column" style="width:60%;">
+<div class="column" style="width:65%;">
 <table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">名前</th>
+<th
+style="text-align: left;"><font color="magenta">Sumi-Sumi</font></th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td>名前</td>
-<td><font color="magenta">Sumi-Sumi</font></td>
+<td style="text-align: left;">身分</td>
+<td style="text-align: left;">しがない院生 (音声合成系)</td>
 </tr>
 <tr class="even">
-<td>身分</td>
-<td>しがない院生 (音声合成系)</td>
+<td style="text-align: left;">nix</td>
+<td style="text-align: left;">2022/09〜</td>
 </tr>
 <tr class="odd">
-<td>趣味</td>
-<td>HomeLab, VR, DJ, Maid …</td>
+<td style="text-align: left;">用途</td>
+<td style="text-align: left;">Desktop, HomeLab, ML</td>
 </tr>
 </tbody>
 </table>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><font size="6pt" color="cyan">nixos-desktop-config</font> <img
-data-src="./assets/figs/nixos-desktop-config.png"
-style="width:70.0%" /></p>
+data-src="./assets/imgs/nixos-desktop-config.png"
+style="width:60.0%" /></p>
 </div><div class="column" style="width:50%;">
 <p><font size="8pt" color="cyan">nvimdots</font> <img
-data-src="./assets/figs/nvimdots.png" style="width:70.0%" /></p>
+data-src="./assets/imgs/nvimdots.png" style="width:60.0%" /></p>
 </div>
 </div>
-</div><div class="column" style="width:40%;">
-<p><img data-src="./assets/figs/avator.jpg" style="width:80.0%" /></p>
+</div><div class="column" style="width:35%;">
+<p><img data-src="./assets/imgs/avator.jpg" /></p>
 </div>
 </div>
 </section>
-<section id="現在稼動中のマシン" class="title-slide slide level1">
-<h1>現在稼動中のマシン</h1>
+<section id="linuxの変遷" class="slide level2">
+<h2>Linuxの変遷</h2>
+<p><img
+data-src="plantuml-images/1ffa97da785bb8058020702eafa665479b6fb708.png" /></p>
+</section>
+<section id="デスクトップ環境" class="slide level2">
+<h2>デスクトップ環境</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">NixOS</th>
+<th style="text-align: center;">unstable</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">WM</td>
+<td style="text-align: center;">Qtile</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Shell</td>
+<td style="text-align: center;">Zsh</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Terminal</td>
+<td style="text-align: center;">Wezterm<br>+Tmux</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Editor</td>
+<td style="text-align: center;">Neovim</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:70%;">
+<p><img data-src="./assets/imgs/thumbnail.png" /></p>
+</div>
+</div>
+</section></section>
+<section>
+<section id="妥協しない" class="title-slide slide level1">
+<h1>妥協しない？</h1>
 
 </section>
+<section id="妥協しない-1" class="slide level2">
+<h2>妥協しない？</h2>
+<ol type="1">
+<li>nixos-unstableの安定的な運用</li>
+<li>プラットフォーム間で環境差異が無いこと</li>
+<li><strong>Declarative deployments</strong> is All You Need</li>
+</ol>
+</section>
+<section id="達成したこと" class="slide level2">
+<h2>達成したこと</h2>
+<ol type="1">
+<li>GitHub flow + CI/CDによる自動テスト</li>
+<li><ol start="3" type="1">
+<li>chezmoiの導入</li>
+</ol></li>
+</ol>
+</section></section>
     </div>
   </div>
 
