@@ -55,14 +55,13 @@
 <thead>
 <tr class="header">
 <th style="text-align: left;">名前</th>
-<th
-style="text-align: left;"><font color="magenta">Sumi-Sumi</font></th>
+<th style="text-align: left;"><font color="cyan">Sumi-Sumi</font></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">身分</td>
-<td style="text-align: left;">しがない院生 (音声合成系)</td>
+<td style="text-align: left;">院生 (M2→D1, 音声合成系)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">nix</td>
@@ -76,12 +75,12 @@ style="text-align: left;"><font color="magenta">Sumi-Sumi</font></th>
 </table>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><font size="6pt" color="cyan">nixos-desktop-config</font> <img
-data-src="./assets/imgs/nixos-desktop-config.png"
+<p><a href="https://github.com/misumisumi/nixos-desktop-config"><font size="6pt">nixos-desktop-config</font></a>
+<img data-src="./assets/imgs/nixos-desktop-config.png"
 style="width:60.0%" /></p>
 </div><div class="column" style="width:50%;">
-<p><font size="8pt" color="cyan">nvimdots</font> <img
-data-src="./assets/imgs/nvimdots.png" style="width:60.0%" /></p>
+<p><a href="https://github.com/misumisumi/nvimdots"><font size="8pt">nvimdots</font></a>
+<img data-src="./assets/imgs/nvimdots.png" style="width:60.0%" /></p>
 </div>
 </div>
 </div><div class="column" style="width:35%;">
@@ -139,17 +138,59 @@ data-src="plantuml-images/1ffa97da785bb8058020702eafa665479b6fb708.png" /></p>
 <ol type="1">
 <li>nixos-unstableの安定的な運用</li>
 <li>プラットフォーム間で環境差異が無いこと</li>
-<li><strong>Declarative deployments</strong> is All You Need</li>
+<li><strong>宣言的デプロイ</strong> is All You Need</li>
 </ol>
 </section>
-<section id="達成したこと" class="slide level2">
-<h2>達成したこと</h2>
+<section id="tips的な" class="slide level2">
+<h2>Tips的な</h2>
 <ol type="1">
-<li>GitHub flow + CI/CDによる自動テスト</li>
-<li><ol start="3" type="1">
-<li>chezmoiの導入</li>
-</ol></li>
+<li><strong>リポジトリ戦略</strong>：GitHub flow, CI/CD</li>
+<li><u>外部パッケージマネージャ</u>の統合</li>
+<li><strong>chezmoi</strong>の統合</li>
 </ol>
+</section></section>
+<section>
+<section id="リポジトリ戦略" class="title-slide slide level1">
+<h1>リポジトリ戦略</h1>
+
+</section>
+<section id="github-flow" class="slide level2">
+<h2>GitHub flow</h2>
+<p><img data-src="./assets/imgs/github-flow.drawio.png" /></p>
+<ul>
+<li>細かい変更が多々ある</li>
+</ul>
+</section>
+<section id="常にロールバックできる" class="slide level2">
+<h2>常にロールバックできる?</h2>
+<p><strong>No</strong> (force pull/push…)</p>
+<ul>
+<li>NixOSにおいて<strong>コード=マシン状態</strong> (IaC)</li>
+<li>適切な管理下でロールバックが初めて担保
+<ul>
+<li>mainは常に<u>起動可能</u>な<strong>最新</strong>の状態を維持</li>
+</ul></li>
+</ul>
+<p>→ 問題無く動作する？</p>
+</section>
+<section id="バージョン戦略" class="slide level2">
+<h2>バージョン戦略</h2>
+<ul>
+<li>nixpkgs/modulesがアップストリームの仕様に<br>追随している訳ではない</li>
+<li><strong>バージョニング</strong>で動作保証
+<ul>
+<li>mainにマージした時点でバージョンを上げる</li>
+</ul></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="./assets/imgs/conventional-commits.png"
+style="width:110.0%" /></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="./assets/imgs/release-please-action.png"
+style="width:110.0%" /></p>
+</div>
+</div>
 </section></section>
     </div>
   </div>

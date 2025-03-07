@@ -17,20 +17,20 @@ title-slide-attributes:
 :::::::::::::: {.columns}
 ::: {.column width="65%" }
 
-| 名前 | <font color="magenta">Sumi-Sumi</font> |
-| :--- | :------------------------------------- |
-| 身分 | しがない院生 (音声合成系)              |
-| nix  | 2022/09〜                              |
-| 用途 | Desktop, HomeLab, ML                   |
+| 名前 | <font color="cyan">Sumi-Sumi</font> |
+| :--- | :---------------------------------- |
+| 身分 | 院生 (M2→D1, 音声合成系)            |
+| nix  | 2022/09〜                           |
+| 用途 | Desktop, HomeLab, ML                |
 
 :::::::::::::: {.columns}
 ::: {.column width="50%" }
-<font size="6pt" color="cyan">nixos-desktop-config</font>
+<a href="https://github.com/misumisumi/nixos-desktop-config"><font size="6pt">nixos-desktop-config</font></a>
 ![](./assets/imgs/nixos-desktop-config.png){width=60%}
 :::
 
 ::: {.column width="50%" }
-<font size="8pt" color="cyan">nvimdots</font>
+<a href="https://github.com/misumisumi/nvimdots"><font size="8pt">nvimdots</font></a>
 ![](./assets/imgs/nvimdots.png){width=60%}
 :::
 ::::::::::::::
@@ -84,9 +84,45 @@ l2 -> l3
 
 1. nixos-unstableの安定的な運用
 2. プラットフォーム間で環境差異が無いこと
-3. **Declarative deployments** is All You Need
+3. **宣言的デプロイ** is All You Need
 
-## 達成したこと
+## Tips的な
 
-1. GitHub flow + CI/CDによる自動テスト
-2. 3. chezmoiの導入
+1. **リポジトリ戦略**：GitHub flow, CI/CD
+2. <u>外部パッケージマネージャ</u>の統合
+3. **chezmoi**の統合
+
+# リポジトリ戦略
+
+## GitHub flow
+
+![](./assets/imgs/github-flow.drawio.png)
+
+- 細かい変更が多々ある
+
+## 常にロールバックできる?
+
+**No** (force pull/push...)
+
+- NixOSにおいて**コード=マシン状態** (IaC)
+- 適切な管理下でロールバックが初めて担保
+  - mainは常に<u>起動可能</u>な**最新**の状態を維持
+
+→ 問題無く動作する？
+
+## バージョン戦略
+
+- nixpkgs/modulesがアップストリームの仕様に<br>追随している訳ではない
+- **バージョニング**で動作保証
+  - mainにマージした時点でバージョンを上げる
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+![](./assets/imgs/conventional-commits.png){width=110%}
+:::
+::: {.column width="50%"}
+![](./assets/imgs/release-please-action.png){width=110%}
+:::
+::::::::::::::
+
+## flake.lockの自動更新
