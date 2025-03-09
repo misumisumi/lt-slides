@@ -41,6 +41,23 @@
   <h1 class="title">妥協しない！<br>宣言的マシン環境構築</h1>
   <p class="author">Sumi-Sumi</p>
 </section>
+<section id="TOC">
+<nav role="doc-toc"> 
+<ul>
+<li><a href="#/お前は誰だ" id="/toc-お前は誰だ">お前は誰だ？</a></li>
+<li><a href="#/とっても簡単なnixos"
+id="/toc-とっても簡単なnixos">とっても簡単なNixOS</a></li>
+<li><a href="#/妥協しない" id="/toc-妥協しない">妥協しない？</a></li>
+<li><a href="#/cicdによる自動化"
+id="/toc-cicdによる自動化">CI/CDによる自動化</a></li>
+<li><a href="#/branchversioning戦略"
+id="/toc-branchversioning戦略">Branch・Versioning戦略</a></li>
+<li><a href="#/外部パッケージマネージャの統合"
+id="/toc-外部パッケージマネージャの統合">外部パッケージマネージャの統合</a></li>
+<li><a href="#/まとめ" id="/toc-まとめ">まとめ</a></li>
+</ul>
+</nav>
+</section>
 
 <section>
 <section id="お前は誰だ" class="title-slide slide level1">
@@ -50,7 +67,7 @@
 <section id="プロフィール" class="slide level2">
 <h2>プロフィール</h2>
 <div class="columns">
-<div class="column" style="width:65%;">
+<div class="column" style="width:60%;">
 <table>
 <thead>
 <tr class="header">
@@ -74,29 +91,33 @@
 </tbody>
 </table>
 <div class="columns">
-<div class="column" style="width:50%;">
-<p><a href="https://github.com/misumisumi/nixos-desktop-config"><font size="6pt">nixos-desktop-config</font></a>
-<img data-src="./assets/imgs/nixos-desktop-config.png"
-style="width:60.0%" /></p>
-</div><div class="column" style="width:50%;">
-<p><a href="https://github.com/misumisumi/nvimdots"><font size="8pt">nvimdots</font></a>
-<img data-src="./assets/imgs/nvimdots.png" style="width:60.0%" /></p>
+<div class="column" style="width:33%;">
+<p><a
+href="https://drive.google.com/file/d/1roGWup39v-6MWu9Fu8PM-4zqlLHIJ14s/view?usp=drive_link">今日の資料</a>
+<img data-src="./assets/imgs/slide-qr.png" style="width:75.0%" /></p>
+</div><div class="column" style="width:33%;">
+<p><a href="https://github.com/misumisumi/nixos-desktop-config" style="font-size:24px">nixos-desktop-config</a>
+<img data-src="./assets/imgs/nixos-desktop-config-qr.png"
+style="width:75.0%" /></p>
+</div><div class="column" style="width:33%;">
+<p><a href="https://github.com/misumisumi/nvimdots">nvimdots</a> <img
+data-src="./assets/imgs/nvimdots-qr.png" style="width:75.0%" /></p>
 </div>
 </div>
-</div><div class="column" style="width:35%;">
-<p><img data-src="./assets/imgs/avator.jpg" /></p>
+</div><div class="column" style="width:40%;">
+<p><img data-src="./assets/imgs/avator.jpg" style="width:75.0%" /></p>
 </div>
 </div>
 </section>
-<section id="linuxの変遷" class="slide level2">
-<h2>Linuxの変遷</h2>
+<section id="ディストロの変遷" class="slide level2">
+<h2>ディストロの変遷</h2>
 <p><img
-data-src="plantuml-images/1ffa97da785bb8058020702eafa665479b6fb708.png" /></p>
+data-src="plantuml-images/d94ae76d9b967ca457b30432fb0d380d7c3e0955.png" /></p>
 </section>
 <section id="デスクトップ環境" class="slide level2">
 <h2>デスクトップ環境</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
+<div class="columns" data-align="center">
+<div class="column" style="width:40%;">
 <table>
 <thead>
 <tr class="header">
@@ -123,63 +144,178 @@ data-src="plantuml-images/1ffa97da785bb8058020702eafa665479b6fb708.png" /></p>
 </tr>
 </tbody>
 </table>
-</div><div class="column" style="width:70%;">
+</div><div class="column" style="width:60%;">
 <p><img data-src="./assets/imgs/thumbnail.png" /></p>
 </div>
 </div>
+</section></section>
+<section>
+<section id="とっても簡単なnixos" class="title-slide slide level1">
+<h1>とっても簡単なNixOS</h1>
+
+</section>
+<section id="first-rise" class="slide level2">
+<h2>First Rise</h2>
+<ul>
+<li>non flake
+<ol type="1">
+<li><code>nixos-generate-config</code></li>
+<li><code>*.enable = true;</code>+頑張る</li>
+<li><code>nixos-rebuild switch</code></li>
+</ol></li>
+<li>flake
+<ol type="1">
+<li><code>nix flake init</code></li>
+<li>inputsに依存を追加</li>
+</ol>
+<ul>
+<li>home-managerとかnixos-hardware…</li>
+</ul>
+<ol start="3" type="1">
+<li><code>*.enable = true;</code>+頑張る</li>
+<li><code>nixos-rebuild switch</code></li>
+</ol></li>
+</ul>
+<p>→ NixOSの良さ活かせてる？</p>
 </section></section>
 <section>
 <section id="妥協しない" class="title-slide slide level1">
 <h1>妥協しない？</h1>
 
 </section>
-<section id="妥協しない-1" class="slide level2">
-<h2>妥協しない？</h2>
+<section class="slide level2">
+
 <ol type="1">
-<li>nixos-unstableの安定的な運用</li>
+<li><u>nixos-unstable</u>の安定的な運用</li>
 <li>プラットフォーム間で環境差異が無いこと</li>
 <li><strong>宣言的デプロイ</strong> is All You Need</li>
 </ol>
 </section>
-<section id="tips的な" class="slide level2">
-<h2>Tips的な</h2>
+<section id="どうやって実現する" class="slide level2">
+<h2>どうやって実現する？</h2>
 <ol type="1">
-<li><strong>リポジトリ戦略</strong>：GitHub flow, CI/CD</li>
+<li><strong>CI/CD</strong>による自動化</li>
+<li><strong>Branch</strong>・<strong>Versioning</strong>戦略</li>
 <li><u>外部パッケージマネージャ</u>の統合</li>
-<li><strong>chezmoi</strong>の統合</li>
 </ol>
 </section></section>
 <section>
-<section id="リポジトリ戦略" class="title-slide slide level1">
-<h1>リポジトリ戦略</h1>
+<section id="cicdによる自動化" class="title-slide slide level1">
+<h1>CI/CDによる自動化</h1>
 
 </section>
-<section id="github-flow" class="slide level2">
-<h2>GitHub flow</h2>
-<p><img data-src="./assets/imgs/github-flow.drawio.png" /></p>
+<section id="arch-linux時代" class="slide level2">
+<h2>Arch Linux時代</h2>
 <ul>
-<li>細かい変更が多々ある</li>
-</ul>
-</section>
-<section id="常にロールバックできる" class="slide level2">
-<h2>常にロールバックできる?</h2>
-<p><strong>No</strong> (force pull/push…)</p>
+<li>適当なアプデ<br>→AURビルド不備、破壊的変更による起動不可</li>
+<li><code>nix</code>=<code>Infrastructure as Code (IaC)</code>
 <ul>
-<li>NixOSにおいて<strong>コード=マシン状態</strong> (IaC)</li>
-<li>適切な管理下でロールバックが初めて担保
-<ul>
-<li>mainは常に<u>起動可能</u>な<strong>最新</strong>の状態を維持</li>
+<li>CI/CDで予防できる！</li>
 </ul></li>
 </ul>
-<p>→ 問題無く動作する？</p>
+</section>
+<section id="flake.lockの自動更新" class="slide level2">
+<h2>flake.lockの自動更新</h2>
+<ul>
+<li><a
+href="https://github.com/DeterminateSystems/update-flake-lock">DeterminateSystems/update-flake-lock</a>
+<ul>
+<li><code>flake.lock</code>を更新→PR作成</li>
+</ul></li>
+<li>実際は依存先から順に更新
+<ul>
+<li><a href="https://github.com/misumisumi/nvimdots">nvimdots</a>→<a
+href="https://github.com/misumisumi/flakes">flakes</a>→<a
+href="https://github.com/misumisumi/flakes">nixos-desktop-config</a></li>
+</ul></li>
+</ul>
+<p><img data-src="./assets/imgs/update-flake-lock.png"
+style="width:60.0%" /></p>
+</section>
+<section id="deprecated-optionの通知" class="slide level2">
+<h2>Deprecated optionの通知</h2>
+<ul>
+<li>nixos-unstableは仕様変更が多々ある</li>
+<li>式を評価<br>→<code>Evaluation Warning</code>があればISSUEを開く</li>
+</ul>
+<p><img data-src="./assets/imgs/check-eval.png"
+style="width:55.0%" /></p>
+</section>
+<section id="ビルドテスト" class="slide level2">
+<h2>ビルドテスト</h2>
+<ul>
+<li>システムビルドに必要な容量：60GB～</li>
+<li><a
+href="https://docs.github.com/en/actions/writing-workflows/choosing-where-your-workflow-runs/choosing-the-runner-for-a-job#choosing-github-hosted-runners">標準Runner</a>は容量が足りない→空き29GB</li>
+<li><a
+href="https://github.com/easimon/maximize-build-space">easimon/maximize-build-space</a>
+<ul>
+<li>不要パッケージの削除, ディスク(LVM)割り当ての変更</li>
+<li><code>/nix</code>：96GB確保</li>
+</ul></li>
+<li>ビルド時間：40分～</li>
+</ul>
+<p><img data-src="./assets/imgs/maximize-build-space.png"
+style="width:55.0%" /></p>
+</section>
+<section id="パブリックでのシークレット管理" class="slide level2">
+<h2>パブリックでのシークレット管理</h2>
+<ul>
+<li>パブリックリポジトリだと標準Runnerが無料！</li>
+<li>個人マシンには秘匿情報がいっぱい！
+<ul>
+<li>パスワード、ssh、APIキー…</li>
+</ul></li>
+</ul>
+</section>
+<section id="mic92sops-nix" class="slide level2">
+<h2><a href="https://github.com/Mic92/sops-nix">Mic92/sops-nix</a></h2>
+<ul>
+<li><strong>age</strong>, <strong>pgp</strong>でファイル暗号化</li>
+<li>アクティベーション時に符号化</li>
+<li><code>/nix/store</code>には暗号化ファイルが配置</li>
+</ul>
+<p><img data-src="./assets/imgs/sops-nix.png" style="width:80.0%" /></p>
+</section></section>
+<section>
+<section id="branchversioning戦略" class="title-slide slide level1">
+<h1>Branch・Versioning戦略</h1>
+
+</section>
+<section id="そのnixos-常にロールバックできる" class="slide level2">
+<h2>そのNixOS<br>常にロールバックできる?</h2>
+<p style="font-size:96px">
+No
+</p>
+<ul>
+<li>既デプロイへのロールバック○</li>
+<li>コードレベルは？
+<ul>
+<li>force push/pull …</li>
+</ul></li>
+<li>NixOSにおいて<strong>コード=マシン状態</strong> (IaC)</li>
+<li>適切な管理下でロールバックが初めて担保</li>
+</ul>
+</section>
+<section id="ブランチ戦略github-flow" class="slide level2">
+<h2>ブランチ戦略：GitHub flow</h2>
+<p><img data-src="./assets/imgs/github-flow.drawio.png" /></p>
+<ul>
+<li>細かい変更を受容</li>
+<li>mainは常に<u>起動可能</u>な状態を維持
+<ul>
+<li>→エラー無く動作する？</li>
+</ul></li>
+</ul>
 </section>
 <section id="バージョン戦略" class="slide level2">
 <h2>バージョン戦略</h2>
 <ul>
-<li>nixpkgs/modulesがアップストリームの仕様に<br>追随している訳ではない</li>
-<li><strong>バージョニング</strong>で動作保証
+<li>起動可≠各Appがエラー無く動作</li>
+<li>nixpkgs/modulesが<br><u>アップストリームの仕様に追随している訳ではない</u></li>
+<li><strong>リリース地点=動作確約</strong>
 <ul>
-<li>mainにマージした時点でバージョンを上げる</li>
+<li>ビルドテスト→mainにマージ→リリース<br>(テストは特定のファイルの変更があったときのみ)</li>
 </ul></li>
 </ul>
 <div class="columns">
@@ -189,6 +325,184 @@ style="width:110.0%" /></p>
 </div><div class="column" style="width:50%;">
 <p><img data-src="./assets/imgs/release-please-action.png"
 style="width:110.0%" /></p>
+</div>
+</div>
+</section>
+<section id="お一人様向けより厳密な運用" class="slide level2">
+<h2>お一人様向け：より厳密な運用</h2>
+<ul>
+<li><a
+href="https://github.com/reviewdog/reviewdog">reviewdog</a>によるコードレビュー</li>
+<li>自分のコードに対して承認できない
+<ul>
+<li>github actions [bot] はworkflowが走らない</li>
+</ul></li>
+<li><strong>GitHub Apps</strong>で別人格を作成
+<ul>
+<li><u>agent-of-me</u>：<br>コードレビュー、変更の承認・取り消し</li>
+<li><u>workflow-executer</u>：<br>flake.lockの更新・リリースPRの作成</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="外部パッケージマネージャの統合"
+class="title-slide slide level1">
+<h1>外部パッケージマネージャの統合</h1>
+
+</section>
+<section id="nixは完全無欠で究極のpkg-manager-じゃない"
+class="slide level2">
+<h2>nixは完全無欠で究極のpkg manager…<br>じゃない？</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>導入に<u>root権限</u>が必須</li>
+<li>多くの容量</li>
+<li>複数マシンでの<code>/nix/store</code>の共有</li>
+<li>維持コスト
+<ul>
+<li>上流の変更への追随</li>
+<li>教育・継承</li>
+</ul></li>
+</ul>
+<p>= 共有鯖・支給PCで使いにくい<br />
+→nixだけで完結させるのは限界</p>
+</div><div class="column" style="width:40%;">
+<p><img data-src="./assets/imgs/oshi_no_ko.jpg"
+style="width:150.0%" /></p>
+</div>
+</div>
+</section>
+<section id="nixos-desktop-configの構成" class="slide level2">
+<h2>nixos-desktop-configの構成</h2>
+<ul>
+<li><code>App Conf</code>はnixpkgsを優先しているものもある</li>
+</ul>
+<p><img data-src="./assets/imgs/nixos-desktop-config.drawio.png" /></p>
+</section>
+<section id="folkelazy.nvimの統合" class="slide level2">
+<h2><a
+href="https://github.com/folke/lazy.nvim">folke/lazy.nvim</a>の統合</h2>
+<ul>
+<li><code>lazy-loadingによる高速起動</code> (～80ms)</li>
+<li>マルチプラットフォーム</li>
+</ul>
+<figure>
+<img data-src="./assets/imgs/nvimdots.png" alt="ayamir/nvimdots" />
+<figcaption aria-hidden="true">ayamir/nvimdots</figcaption>
+</figure>
+</section>
+<section id="nixos特有の設定" class="slide level2">
+<h2>NixOS特有の設定</h2>
+<ul>
+<li>NixOS上でのバイナリ動作
+<ul>
+<li><a
+href="https://github.com/nix-community/nix-ld">nix-ld</a>+依存関係をPATHへ追加</li>
+</ul></li>
+<li><em>lock file</em>をnix上で扱うロジックの構築
+<ul>
+<li><code>xdg.configFile</code>は<u>read only</u>なため</li>
+</ul></li>
+</ul>
+<p><img
+data-src="plantuml-images/f82deaa2ad36d86273077a870f03ae8f39e841a2.png" /></p>
+<p>(例): <code>mason-lock.json</code></p>
+</section>
+<section id="chezmoi" class="slide level2">
+<h2><a href="https://www.chezmoi.io">chezmoi</a></h2>
+<ul>
+<li><u>windows</u>を含めたマルチプラットフォームに対応</li>
+<li>GPGやageを用いたファイル暗号化</li>
+<li>各種パスワードマネージャのサポート</li>
+<li>アーカイブファイルの自動展開</li>
+</ul>
+<p><img data-src="./assets/imgs/chezmoi.png" style="width:60.0%" /></p>
+</section>
+<section id="強力なテンプレートとスクリプト" class="slide level2">
+<h2>強力なテンプレートとスクリプト</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<ul>
+<li>Goテンプレートによる動的な変更</li>
+<li>アクティベート時のスクリプト実行による追加処理
+<ul>
+<li>非NixOS(<strong>windows含む</strong>)でも<br>宣言的パッケージインストール</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="./assets/imgs/chezmoitemplate.png"
+style="width:85.0%" /></p>
+</div>
+</div>
+</section>
+<section id="chezmoiとnix" class="slide level2">
+<h2>chezmoiとnix</h2>
+<ul>
+<li>chezmoi: <a
+href="https://www.chezmoi.io/reference/special-files/chezmoidata-format/">.chezmoidata.$FORMAT</a>による状態管理
+<ul>
+<li><code>json</code>、<code>toml</code>はnixの<em>builtins</em>で読み込み可</li>
+</ul></li>
+<li>nix: <a
+href="https://home-manager-options.extranix.com/?query=xdg.configFile&amp;release=master">xdg.configFile.source</a>で<br>設定ファイルを<code>$XDG_CONFIG_HOME</code>以下に配置</li>
+</ul>
+<p>→設定ファイルを重複させなくて良い<br />
+(<u>NixOS上でchezmoiは使っていない</u>)</p>
+<p><strong>chezmoi環境の<u>再現性は担保されない</u></strong></p>
+</section>
+<section id="の再現性と1の非再現性" class="slide level2">
+<h2>99%の再現性と1%の非再現性</h2>
+<ul>
+<li>再現性&lt;利便性</li>
+<li>ex) zinit
+<ul>
+<li>遅延ロード (3ms～5ms)</li>
+<li>zshプラグインはバージョニングに厳密でない
+<ul>
+<li>nixpkgsは古いままのが多々ある</li>
+</ul></li>
+</ul></li>
+<li>ex) tpm
+<ul>
+<li>非nix環境で</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="まとめ" class="title-slide slide level1">
+<h1>まとめ</h1>
+
+</section>
+<section class="slide level2">
+
+<ul>
+<li>リポジトリの運用次第で<strong>より堅牢な</strong>環境構築</li>
+<li>外部パッケージの許容により<strong>利便性を向上</strong></li>
+<li>chezmoiにより<strong>windowsも</strong>宣言的に管理</li>
+</ul>
+</section>
+<section id="今後" class="slide level2">
+<h2>今後</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>dotfilesはまだまだ続くよどこまでも
+<ul>
+<li>btrfs, nix-darwin, arm…</li>
+</ul></li>
+<li>テストの充実
+<ul>
+<li>VMを用いた起動テスト</li>
+</ul></li>
+<li>HomeLabの構築</li>
+</ul>
+<p style="font-size:88px">
+dotfilesは進捗じゃ<br>ありません！
+</p>
+</div><div class="column" style="width:40%;">
+<p><img data-src="./assets/imgs/dededen.png" style="width:160.0%" /></p>
 </div>
 </div>
 </section></section>
@@ -350,7 +664,7 @@ style="width:110.0%" /></p>
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1200,
+        width: 1600,
 
         height: 900,
 

@@ -1,6 +1,6 @@
 .reveal {
   font-family: "BIZ UDPGothic", "BIZ UDPゴシック", "Regular";
-  font-size: 32pt;
+  font-size: 36pt;
 }
 .reveal h1,
 .reveal h2,
@@ -20,4 +20,7 @@
 .reveal h5,
 .reveal h6 {
   text-transform: none;
+}
+div.columns {
+  gap: 0em;
 }
