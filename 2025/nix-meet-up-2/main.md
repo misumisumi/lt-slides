@@ -8,6 +8,7 @@ margin: 0.005
 slideNumber: true
 title-slide-attributes:
   data-background-size: contain
+revealjs-url: https://unpkg.com/reveal.js
 ---
 
 # お前は誰だ？
@@ -54,9 +55,9 @@ object "" as l1
 object "" as l2
 object "" as l3
 
-l1 : <img:assets/imgs/ubuntu-budgie-logo.png{scale=1.8}>
-l2 : <img:assets/imgs/archlinux-logo.png>
-l3 : <img:assets/imgs/nixos-white.png{scale=0.5}>
+l1 : <img:../assets/imgs/ubuntu-budgie-logo.png{scale=1.8}>
+l2 : <img:../assets/imgs/archlinux-logo.png>
+l3 : <img:../assets/imgs/nixos-white.png{scale=0.5}>
 
 l1 -> l2
 l2 -> l3
