@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Sumi-Sumi">
+  <title>オレオレVPNでどこでもフルトラVR</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/dracula.css" id="theme">
+  <link rel="stylesheet" href="custom.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-size="contain">
+  <h1 class="title">オレオレVPNでどこでもフルトラVR</h1>
+  <p class="author">Sumi-Sumi</p>
+</section>
+<section id="TOC">
+<nav role="doc-toc"> 
+<ul>
+<li><a href="#/お前は誰だ" id="/toc-お前は誰だ">お前は誰だ？</a></li>
+<li><a href="#/これからのイベントと言えば"
+id="/toc-これからのイベントと言えば">これからのイベントと言えば！</a></li>
+<li><a href="#/フルトラをするという強い意思"
+id="/toc-フルトラをするという強い意思">フルトラをするという強い意思</a></li>
+<li><a href="#/オレオレvpnでどこでもフルトラvr"
+id="/toc-オレオレvpnでどこでもフルトラvr">オレオレVPNでどこでもフルトラVR</a></li>
+</ul>
+</nav>
+</section>
+
+<section>
+<section id="お前は誰だ" class="title-slide slide level1">
+<h1>お前は誰だ？</h1>
+
+</section>
+<section id="プロフィール" class="slide level2">
+<h2>プロフィール</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">名前</th>
+<th style="text-align: left;"><font color="cyan">Sumi-Sumi</font></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ぶいちゃ</td>
+<td style="text-align: left;">メイド<br>インフラ集会運営 etc…</td>
+</tr>
+<tr>
+<td style="text-align: left;">リアル</td>
+<td style="text-align: left;">院生（音声合成系）</td>
+</tr>
+<tr>
+<td style="text-align: left;">インフラ</td>
+<td style="text-align: left;">HomeLab</td>
+</tr>
+</tbody>
+</table>
+<p><img data-src="./assets/imgs/thumbnail.png"
+style="width:60.0%" /></p>
+</div><div class="column" style="width:40%;">
+<p><img data-src="./assets/profile/avator.jpg"
+style="width:75.0%" /></p>
+</div>
+</div>
+</section>
+<section id="my-homelab" class="slide level2">
+<h2>My HomeLab</h2>
+<ul>
+<li>当然のようにブレード鯖！</li>
+<li>InfiniBand、業務用AP (WiFi 6E)完備！</li>
+<li>まだ点火されていない！</li>
+</ul>
+<p><img data-src="./assets/imgs/PXL_20250719_112711859.jpg"
+style="width:55.0%" /></p>
+</section></section>
+<section>
+<section id="これからのイベントと言えば"
+class="title-slide slide level1">
+<h1>これからのイベントと言えば！</h1>
+
+</section>
+<section id="vket-real" class="slide level2">
+<h2>VKET REAL！</h2>
+<p><img data-src="./assets/imgs/vketreal.webp"
+style="width:80.0%" /></p>
+</section>
+<section class="slide level2">
+
+<p>もあるけれど…</p>
+<h1>
+お盆→帰省
+</h1>
+<div class="columns" data-align="center">
+<div class="column" style="width:50%;">
+<p><img data-src="./assets/imgs/summer_kisei.png"
+style="width:80.0%" /></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="./assets/imgs/obon_nasu_kyuri.png"
+style="width:30.0%" /><br />
+<img data-src="./assets/imgs/hanabi_family_bg.png"
+style="width:40.0%" /></p>
+</div>
+</div>
+</section>
+<section id="帰省してもすること無くない" class="slide level2">
+<h2>帰省してもすること…無くない??</h2>
+<div class="columns" data-align="center">
+<div class="column" style="width:45%;">
+<p><br> <br> <img
+data-src="./assets/imgs/smartphone_gorogoro_man_neet.png" /></p>
+</div><div class="column" style="width:10%;">
+<p><br> <br> <br> <br> <img
+data-src="./assets/imgs/mark_arrow_right.png" /></p>
+</div><div class="column" style="width:45%;">
+<p><img data-src="./assets/imgs/vr_game_mother.png" /></p>
+<p style="font-size:72px">
+→ VRChatしよう！
+</p>
+</div>
+</div>
+</section></section>
+<section>
+<section id="フルトラをするという強い意思"
+class="title-slide slide level1">
+<h1>フルトラをするという強い意思</h1>
+
+</section>
+<section class="slide level2">
+
+<p style="font-size:72px; color:violet;">
+フルトラは身体認識に影響を与える
+</p>
+<p><img data-src="./assets/imgs/2025-07-17_19-38.png" /> <img
+data-src="./assets/imgs/2025-07-17_19-38_1.png" /></p>
+</section>
+<section id="持ち物リスト" class="slide level2">
+<h2>持ち物リスト</h2>
+<ul>
+<li>ゲーミングノートPC</li>
+<li>HMD</li>
+<li>ベースステーション ×2</li>
+<li>トラッカ ×3～5</li>
+</ul>
+</section>
+<section id="ゲーミングノートpc" class="slide level2">
+<h2>ゲーミングノートPC</h2>
+<ul>
+<li>お高い</li>
+<li>割にデスクトップと比較すると性能が…</li>
+<li>とっても重い</li>
+<li>クソデカ充電器
+<ul>
+<li>最早鈍器</li>
+</ul></li>
+</ul>
+<p style="font-size:72px; color:violet;">
+→ できれば買いたくなーい
+</p>
+<p style="font-size:32px;">
+(HMD, フルトラ機材の重量には目を瞑る)
+</p>
+</section></section>
+<section>
+<section id="オレオレvpnでどこでもフルトラvr"
+class="title-slide slide level1">
+<h1>オレオレVPNでどこでもフルトラVR</h1>
+
+</section>
+<section id="でリモート接続は可能" class="slide level2">
+<h2><img data-src="./assets/imgs/virtual-desktop.png"
+style="margin:0pt;height:0.88889in" />でリモート接続は可能</h2>
+<p><img data-src="./assets/imgs/virtual-desktop-settings.png"
+style="height:70.0%" /></p>
+<p>フルトラは×</p>
+</section>
+<section class="slide level2">
+
+<p>ドングル=USB…</p>
+<p style="font-size:72px;">
+<u>USBでやりとりされるデータ</u>を<br><font color="violet">ネットワークで送受信</font>すればいいじゃん！
+</p>
+<p><img data-src="./assets/imgs/nobita.jpg" style="width:30.0%" /></p>
+</section>
+<section id="usbip-hirofuchi-2005" class="slide level2">
+<h2>USB/IP <font size=24px>[Hirofuchi+, 2005]</font></h2>
+<ul>
+<li>Server: USBの共有<font color="violet">元</font>マシン</li>
+<li>Client: USBの共有<font color="cyan">先</font>マシン</li>
+<li><u>TCP/IP</u>で通信</li>
+</ul>
+<p><img data-src="./assets/imgs/usbip-design.png"
+style="width:35.0%" /></p>
+</section>
+<section id="usbip" class="slide level2">
+<h2>USB/IP</h2>
+<ul>
+<li>Linux kernelに統合済み(3.17～)</li>
+<li>macやwindows向けの実装もある
+<ul>
+<li>server/client: <a
+href="https://github.com/jiegec/usbip">jiegec/usbip</a></li>
+<li>client: <a
+href="https://github.com/vadimgrn/usbip-win2">vadimgrn/usbip-win2</a></li>
+</ul></li>
+</ul>
+<!-- Sumi-SumiのフルトラもUSB over Network！ -->
+<p>SuperDongleはできない…っぽい</p>
+</section>
+<section class="slide level2">
+
+<p>ここまでで、フルトラVRはできる</p>
+<ol type="1">
+<li>USB/IPとVirtualDesktopの設定</li>
+<li>ポート開放</li>
+<li>ルーティング設定
+<ul>
+<li>FW：特定ポート宛ての通信を接続先IPに転送</li>
+<li>SSHのポート転送</li>
+</ul></li>
+<li>接続確認</li>
+</ol>
+<p><strong>USB/IPは暗号化されていない</strong></p>
+</section>
+<section class="slide level2">
+
+<p>おそらく…</p>
+<p style="font-size:72px">
+父母兄妹・隣人はあなたのVR生活に興味津々！<br>通信を<font color="violet">傍受</font>するだろう
+</p>
+<div class="columns" data-align="center">
+<div class="column" style="width:50%;">
+<p><img data-src="./assets/imgs/rhbms.jpg" style="width:70.0%" /></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="./assets/imgs/nukitashi.jpg"
+style="width:90.0%" /></p>
+</div>
+</div>
+<p><font size=32px><u>VirtualDesktopはend-to-endで暗号化</u>されています</font></p>
+</section>
+<section class="slide level2">
+
+<p>というよりは…</p>
+<ul>
+<li>アプリ毎にルーターでポート開放するのが面倒</li>
+<li>クライアント(接続先)側で操作が必要
+<ul>
+<li>場合によってはSSH接続が必要</li>
+</ul></li>
+</ul>
+</section>
+<section id="vpn-virtual-private-network" class="slide level2">
+<h2><font color="violet">VPN</font>: <font color="violet">V</font>irtual
+<font color="violet">P</font>rivate
+<font color="violet">N</font>etwork</h2>
+<ul>
+<li>拠点間を仮想的な専用線で繋げるやつ
+<ul>
+<li>「社内ネットワークに繋ぐにはー」で使うやつ</li>
+</ul></li>
+<li>遠隔地でも同一ネットワークにいるように見せられる</li>
+<li>ポート開放は<u>VPNで使うやつのみでOK</u></li>
+</ul>
+<p><img
+data-src="./assets/imgs/Virtual_Private_Network_overview.svg.png"
+style="background-color:white;;width:40.0%" /></p>
+</section>
+<section class="slide level2">
+
+<p><img data-src="./assets/imgs/wireguard.svg"
+style="background-color:white;;width:70.0%" /></p>
+<ul>
+<li>Linux Kernelに統合済(5.6～)</li>
+<li>マルチプラットフォーム</li>
+<li>仕様が公開されている
+<ul>
+<li><u>NDSS (セキュリティ分野のトップ会議)で採択済</u></li>
+</ul></li>
+<li>商用VPNでの採用実績もあり
+<ul>
+<li>ProtonVPN</li>
+<li>TailscaleVPN</li>
+</ul></li>
+</ul>
+</section>
+<section id="軽量かつ高速" class="slide level2">
+<h2>軽量かつ高速</h2>
+<p><img data-src="./assets/imgs/wg-benchmark.png"
+style="width:50.0%" /></p>
+<p style="font-size:24px">
+出典：https://www.wireguard.com/performance/
+</p>
+</section>
+<section id="シンプルな構築手順" class="slide level2">
+<h2>シンプルな構築手順</h2>
+<ol type="1">
+<li>秘密鍵と公開鍵の作成
+<ul>
+<li>事前共有鍵も設定可</li>
+</ul></li>
+<li>WireGuard用の仮想ネットワークデバイス作成</li>
+<li>FWの設定
+<ul>
+<li>ローカルネットワークに出るため必須</li>
+</ul></li>
+<li>接続</li>
+</ol>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><font color="violet">両拠点共に100mbps</font>あれば、快適なVRChatができる
+<ul>
+<li>フルトラは<u>やや追従にラグ有</u></li>
+</ul></li>
+<li><font color="violet">HaritoraXやmocopiもできる</font>…はず…</li>
+<li>USB/IP
+<ul>
+<li>mac/windowsを接続元にするのは未検証<br>(事例はネットにあり)</li>
+<li>Linux on mac (m1)で転送は検証済</li>
+</ul></li>
+<li>WireGuard
+<ul>
+<li><font color="violet">中古デスクトップで十分</font>作成可</li>
+</ul></li>
+</ul>
+</section></section>
+<section id="この夏-vpn鯖からインフラ沼に飛び込もう"
+class="title-slide slide level1 unlisted">
+<h1 class="unlisted">この夏<br>VPN鯖からインフラ沼に飛び込もう！</h1>
+
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js/plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js/plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: true,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1600,
+
+        height: 900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

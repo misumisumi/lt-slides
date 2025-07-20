@@ -1,0 +1,10 @@
+input-file: main.md
+output-file: main.html
+to: revealjs
+standalone: true
+highlight-style: breezedark
+css: custom.css
+filters:
+  - pandoc-plantuml
+toc: true
+toc-depth: 1
