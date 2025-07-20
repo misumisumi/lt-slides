@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Sumi-Sumi">
-  <title>オレオレVPNでどこでもフルトラVPN</title>
+  <title>オレオレVPNでどこでもフルトラVR</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -38,7 +38,7 @@
     <div class="slides">
 
 <section id="title-slide" data-background-size="contain">
-  <h1 class="title">オレオレVPNでどこでもフルトラVPN</h1>
+  <h1 class="title">オレオレVPNでどこでもフルトラVR</h1>
   <p class="author">Sumi-Sumi</p>
 </section>
 <section id="TOC">
@@ -49,8 +49,8 @@
 id="/toc-これからのイベントと言えば">これからのイベントと言えば！</a></li>
 <li><a href="#/フルトラをするという強い意思"
 id="/toc-フルトラをするという強い意思">フルトラをするという強い意思</a></li>
-<li><a href="#/オレオレvpnでどこでもフルトラvpn"
-id="/toc-オレオレvpnでどこでもフルトラvpn">オレオレVPNでどこでもフルトラVPN</a></li>
+<li><a href="#/オレオレvpnでどこでもフルトラvr"
+id="/toc-オレオレvpnでどこでもフルトラvr">オレオレVPNでどこでもフルトラVR</a></li>
 </ul>
 </nav>
 </section>
@@ -81,14 +81,13 @@ id="/toc-オレオレvpnでどこでもフルトラvpn">オレオレVPNでどこ
 <td style="text-align: left;">院生（音声合成系）</td>
 </tr>
 <tr>
-<td style="text-align: left;">インフラとの<br>関わり</td>
+<td style="text-align: left;">インフラ</td>
 <td style="text-align: left;">HomeLab</td>
 </tr>
 </tbody>
 </table>
-<p><a
-href="https://drive.google.com/file/d/1roGWup39v-6MWu9Fu8PM-4zqlLHIJ14s/view?usp=drive_link"><font size="5pt">今日の資料</font></a><br>
-<img data-src="./assets/imgs/slide-qr.png" style="width:20.0%" /></p>
+<p><img data-src="./assets/imgs/thumbnail.png"
+style="width:60.0%" /></p>
 </div><div class="column" style="width:40%;">
 <p><img data-src="./assets/profile/avator.jpg"
 style="width:75.0%" /></p>
@@ -97,38 +96,13 @@ style="width:75.0%" /></p>
 </section>
 <section id="my-homelab" class="slide level2">
 <h2>My HomeLab</h2>
-<div class="columns" data-align="center">
-<div class="column" style="width:40%;">
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">NixOS</th>
-<th style="text-align: center;">unstable</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">WM</td>
-<td style="text-align: center;">Qtile</td>
-</tr>
-<tr>
-<td style="text-align: left;">Shell</td>
-<td style="text-align: center;">Zsh</td>
-</tr>
-<tr>
-<td style="text-align: left;">Terminal</td>
-<td style="text-align: center;">Wezterm<br>+Tmux</td>
-</tr>
-<tr>
-<td style="text-align: left;">Editor</td>
-<td style="text-align: center;">Neovim</td>
-</tr>
-</tbody>
-</table>
-</div><div class="column" style="width:60%;">
-<p><img data-src="./assets/imgs/thumbnail.png" /></p>
-</div>
-</div>
+<ul>
+<li>当然のようにブレード鯖！</li>
+<li>InfiniBand、業務用AP (WiFi 6E)完備！</li>
+<li>まだ点火されていない！</li>
+</ul>
+<p><img data-src="./assets/imgs/PXL_20250719_112711859.jpg"
+style="width:55.0%" /></p>
 </section></section>
 <section>
 <section id="これからのイベントと言えば"
@@ -217,9 +191,173 @@ data-src="./assets/imgs/2025-07-17_19-38_1.png" /></p>
 (HMD, フルトラ機材の重量には目を瞑る)
 </p>
 </section></section>
-<section id="オレオレvpnでどこでもフルトラvpn"
+<section>
+<section id="オレオレvpnでどこでもフルトラvr"
 class="title-slide slide level1">
-<h1>オレオレVPNでどこでもフルトラVPN</h1>
+<h1>オレオレVPNでどこでもフルトラVR</h1>
+
+</section>
+<section id="でリモート接続は可能" class="slide level2">
+<h2><img data-src="./assets/imgs/virtual-desktop.png"
+style="margin:0pt;height:0.88889in" />でリモート接続は可能</h2>
+<p><img data-src="./assets/imgs/virtual-desktop-settings.png"
+style="height:70.0%" /></p>
+<p>フルトラは×</p>
+</section>
+<section class="slide level2">
+
+<p>ドングル=USB…</p>
+<p style="font-size:72px;">
+<u>USBでやりとりされるデータ</u>を<br><font color="violet">ネットワークで送受信</font>すればいいじゃん！
+</p>
+<p><img data-src="./assets/imgs/nobita.jpg" style="width:30.0%" /></p>
+</section>
+<section id="usbip-hirofuchi-2005" class="slide level2">
+<h2>USB/IP <font size=24px>[Hirofuchi+, 2005]</font></h2>
+<ul>
+<li>Server: USBの共有<font color="violet">元</font>マシン</li>
+<li>Client: USBの共有<font color="cyan">先</font>マシン</li>
+<li><u>TCP/IP</u>で通信</li>
+</ul>
+<p><img data-src="./assets/imgs/usbip-design.png"
+style="width:35.0%" /></p>
+</section>
+<section id="usbip" class="slide level2">
+<h2>USB/IP</h2>
+<ul>
+<li>Linux kernelに統合済み(3.17～)</li>
+<li>macやwindows向けの実装もある
+<ul>
+<li>server/client: <a
+href="https://github.com/jiegec/usbip">jiegec/usbip</a></li>
+<li>client: <a
+href="https://github.com/vadimgrn/usbip-win2">vadimgrn/usbip-win2</a></li>
+</ul></li>
+</ul>
+<!-- Sumi-SumiのフルトラもUSB over Network！ -->
+<p>SuperDongleはできない…っぽい</p>
+</section>
+<section class="slide level2">
+
+<p>ここまでで、フルトラVRはできる</p>
+<ol type="1">
+<li>USB/IPとVirtualDesktopの設定</li>
+<li>ポート開放</li>
+<li>ルーティング設定
+<ul>
+<li>FW：特定ポート宛ての通信を接続先IPに転送</li>
+<li>SSHのポート転送</li>
+</ul></li>
+<li>接続確認</li>
+</ol>
+<p><strong>USB/IPは暗号化されていない</strong></p>
+</section>
+<section class="slide level2">
+
+<p>おそらく…</p>
+<p style="font-size:72px">
+父母兄妹・隣人はあなたのVR生活に興味津々！<br>通信を<font color="violet">傍受</font>するだろう
+</p>
+<div class="columns" data-align="center">
+<div class="column" style="width:50%;">
+<p><img data-src="./assets/imgs/rhbms.jpg" style="width:70.0%" /></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="./assets/imgs/nukitashi.jpg"
+style="width:90.0%" /></p>
+</div>
+</div>
+<p><font size=32px><u>VirtualDesktopはend-to-endで暗号化</u>されています</font></p>
+</section>
+<section class="slide level2">
+
+<p>というよりは…</p>
+<ul>
+<li>アプリ毎にルーターでポート開放するのが面倒</li>
+<li>クライアント(接続先)側で操作が必要
+<ul>
+<li>場合によってはSSH接続が必要</li>
+</ul></li>
+</ul>
+</section>
+<section id="vpn-virtual-private-network" class="slide level2">
+<h2><font color="violet">VPN</font>: <font color="violet">V</font>irtual
+<font color="violet">P</font>rivate
+<font color="violet">N</font>etwork</h2>
+<ul>
+<li>拠点間を仮想的な専用線で繋げるやつ
+<ul>
+<li>「社内ネットワークに繋ぐにはー」で使うやつ</li>
+</ul></li>
+<li>遠隔地でも同一ネットワークにいるように見せられる</li>
+<li>ポート開放は<u>VPNで使うやつのみでOK</u></li>
+</ul>
+<p><img
+data-src="./assets/imgs/Virtual_Private_Network_overview.svg.png"
+style="background-color:white;;width:40.0%" /></p>
+</section>
+<section class="slide level2">
+
+<p><img data-src="./assets/imgs/wireguard.svg"
+style="background-color:white;;width:70.0%" /></p>
+<ul>
+<li>Linux Kernelに統合済(5.6～)</li>
+<li>マルチプラットフォーム</li>
+<li>仕様が公開されている
+<ul>
+<li><u>NDSS (セキュリティ分野のトップ会議)で採択済</u></li>
+</ul></li>
+<li>商用VPNでの採用実績もあり
+<ul>
+<li>ProtonVPN</li>
+<li>TailscaleVPN</li>
+</ul></li>
+</ul>
+</section>
+<section id="軽量かつ高速" class="slide level2">
+<h2>軽量かつ高速</h2>
+<p><img data-src="./assets/imgs/wg-benchmark.png"
+style="width:50.0%" /></p>
+<p style="font-size:24px">
+出典：https://www.wireguard.com/performance/
+</p>
+</section>
+<section id="シンプルな構築手順" class="slide level2">
+<h2>シンプルな構築手順</h2>
+<ol type="1">
+<li>秘密鍵と公開鍵の作成
+<ul>
+<li>事前共有鍵も設定可</li>
+</ul></li>
+<li>WireGuard用の仮想ネットワークデバイス作成</li>
+<li>FWの設定
+<ul>
+<li>ローカルネットワークに出るため必須</li>
+</ul></li>
+<li>接続</li>
+</ol>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><font color="violet">両拠点共に100mbps</font>あれば、快適なVRChatができる
+<ul>
+<li>フルトラは<u>やや追従にラグ有</u></li>
+</ul></li>
+<li><font color="violet">HaritoraXやmocopiもできる</font>…はず…</li>
+<li>USB/IP
+<ul>
+<li>mac/windowsを接続元にするのは未検証<br>(事例はネットにあり)</li>
+<li>Linux on mac (m1)で転送は検証済</li>
+</ul></li>
+<li>WireGuard
+<ul>
+<li><font color="violet">中古デスクトップで十分</font>作成可</li>
+</ul></li>
+</ul>
+</section></section>
+<section id="この夏-vpn鯖からインフラ沼に飛び込もう"
+class="title-slide slide level1 unlisted">
+<h1 class="unlisted">この夏<br>VPN鯖からインフラ沼に飛び込もう！</h1>
 
 </section>
     </div>
